@@ -13,7 +13,7 @@ cap = cv.VideoCapture(0)
 cap.set(3, 2120)  # Set a smaller width to reduce the load
 cap.set(4, 1080)  # Set a smaller height to reduce the load
 
-# Define the virtual keyboard layout
+
 keys = [["A", "Z", "E", "R", "T", "Y", "U", "I", "O", "P", "^", "$"],
         ["Q", "S", "D", "F", "G", "H", "J", "K", "L", "M", "%", "*"],
         ["W", "X", "C", "V", "B", "N", ",", ";", ":", "!", ".", "?"]]
@@ -111,7 +111,7 @@ while True:
             if lmlist[8][2] > lmlist[7][2] or lmlist[12][2] > lmlist[11][2]:
                 clicked = False
 
-    # Display the typed text
+    # Displaying the typed text
     cv.rectangle(img, (50, 580), (1235, 680), (64, 64, 64), cv.FILLED)
     cv.putText(img, finalText, (60, 645), cv.FONT_HERSHEY_PLAIN, 4, (255, 255, 255), 4)
 
@@ -122,6 +122,6 @@ while True:
     if cv.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Release the capture and close OpenCV windows
+
 cap.release()
 cv.destroyAllWindows()
